@@ -5,6 +5,9 @@ import { ClipLoader } from "react-spinners";
 import { useState, useEffect } from "react";
 
 function Gallery() {
+
+  //preloader logic
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,6 +19,8 @@ function Gallery() {
     checkImageLoading();
   }, []);
 
+  //gallery data
+  
   const galleryImages = [
     { src: './gallery/sunset.jpg', description: 'Beautiful sunset over Kedarnath Temple' },
     { src: './gallery/view.jpg', description: 'Scenic view of the Himalayan range' },

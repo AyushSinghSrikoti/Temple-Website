@@ -3,6 +3,9 @@ import { animateScroll as scroll } from 'react-scroll';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
+
+  //function to automatically scroll to the top of the pages on navigation
+  
   const scrollToTop = () => {
     scroll.scrollToTop();
   };

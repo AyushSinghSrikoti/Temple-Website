@@ -5,6 +5,9 @@ import { ClipLoader } from "react-spinners";
 import { useState, useEffect } from "react";
 
 function AboutPage() {
+
+  //preloader logic
+  
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

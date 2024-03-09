@@ -4,7 +4,6 @@ import AboutPage from './components/AboutPage';
 import Gallery from './components/Gallery';
 import Travel from './components/Travel';
 import Contact from './components/Contacts';
-import Significance from './components/Significance';
 import Home from './components/Home'
 import {
   createBrowserRouter,
@@ -14,6 +13,8 @@ import {
   } from "react-router-dom";
 
 function App() {
+   
+  //created routes for navigation
 
   const routes = createRoutesFromElements(
     <>
@@ -23,7 +24,6 @@ function App() {
       <Route path="/contact" element={< Contact/>}/>
       <Route path="/gallery" element={ <Gallery/>}/>
       <Route path="/travel" element={< Travel/>}/>
-      <Route path="/significance" element={ <Significance/>}/>
     </>
   )
 

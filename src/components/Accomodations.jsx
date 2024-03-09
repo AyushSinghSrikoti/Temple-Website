@@ -3,6 +3,9 @@ import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from '@react-
 import Navbar from "./navbar";
 import Footer from "./Footer";
 
+
+//styles for pdf to download
+
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'row',
@@ -49,6 +52,9 @@ const styles = StyleSheet.create({
   },
 });
 
+
+//doc structure inside the pdf 
+
 const MyDocument = ({ formData, organizationName }) => (
   <Document title="Accommodation Booking" author={organizationName}>
     <Page size="A4" style={styles.page}>
@@ -76,7 +82,11 @@ const MyDocument = ({ formData, organizationName }) => (
   </Document>
 );
 
+
 function Accommodations() {
+
+  //state for form data
+
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -84,6 +94,8 @@ function Accommodations() {
     checkOutDate: '',
   });
 
+  // handling form input typed by the user
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));

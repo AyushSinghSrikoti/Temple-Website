@@ -6,6 +6,8 @@ import Footer from "./Footer";
 import { ClipLoader } from "react-spinners";
 
 function Home() {
+
+    //preloader logic used
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,6 +21,7 @@ function Home() {
 
   return (
     <>
+        {/* conditional rendering based on loader logic */}
       {loading ? (
         <div className="flex justify-center items-center h-screen">
           <ClipLoader color="black" loading={loading} size={150} />
