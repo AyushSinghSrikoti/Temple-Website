@@ -1,8 +1,21 @@
 import React from 'react';
 import Navbar from "./navbar";
 import Footer from "./Footer";
+import { ClipLoader } from "react-spinners";
+import { useState, useEffect } from "react";
 
 function Gallery() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkImageLoading = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    };
+    checkImageLoading();
+  }, []);
+
   const galleryImages = [
     { src: './gallery/sunset.jpg', description: 'Beautiful sunset over Kedarnath Temple' },
     { src: './gallery/view.jpg', description: 'Scenic view of the Himalayan range' },
@@ -14,7 +27,9 @@ function Gallery() {
 
   return (
     <>
-      <Navbar />
+      {loading ? <div className="flex justify-center items-center h-screen">
+      <ClipLoader color="black" loading={loading} size={150} />
+    </div> : <><Navbar />
       <div className="p-8">
         <h2 className="text-4xl font-bold mb-6">Gallery</h2>
 
@@ -41,7 +56,8 @@ function Gallery() {
   </p>
 </div>
       </div>
-      <Footer />
+      <Footer /></>}
+      
     </>
   );
 }

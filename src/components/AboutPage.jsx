@@ -1,11 +1,26 @@
 import React from 'react';
 import Navbar from './navbar';
 import Footer from './Footer';
+import { ClipLoader } from "react-spinners";
+import { useState, useEffect } from "react";
 
 function AboutPage() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkImageLoading = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    };
+    checkImageLoading();
+  }, []);
+
   return (
     <>
-      <Navbar />
+      {loading ? <div className="flex justify-center items-center h-screen">
+      <ClipLoader color="black" loading={loading} size={150} />
+    </div> : <><Navbar />
       <div className="p-8">
         <h1 className="text-4xl font-bold mb-4">About Kedarnath Temple Website</h1>
 
@@ -63,7 +78,8 @@ function AboutPage() {
           visit to this divine destination.
         </p>
       </div>
-      <Footer />
+      <Footer /></>}
+      
     </>
   );
 }
